@@ -1,0 +1,120 @@
+
+*{
+	margin: 0px;
+}
+
+.cover{
+	width: 100%;
+	height: 100vh;
+	background-image: url('mnt.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.container{
+	
+	width: 25vw;
+	height: 26vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: 1.3s;
+overflow: hidden;
+
+}
+.container:hover{
+	box-shadow: 4px 4px 20px 3px lightgray;
+	backdrop-filter: blur(4px) brightness(130%);
+
+}
+.container::before{
+	content: '';
+	position: absolute;
+	background-color: rgba(200, 200, 200, 0.3);
+	width: 70px;
+	height: 100%;
+	transform: skewX(-10deg) translateX(-150px);
+	transition: 0.6s;
+}
+
+.container:hover::before{
+	transform: skewX(-10deg) translateX(400px);
+}
+::placeholder{
+	color: white;
+}
+
+
+.inputs{
+	align-items: center;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.pass{
+	
+	width: 15vw;
+	height: 4vh;
+	border-radius: 6px;
+	margin-left: vw;
+	border-color: white;
+  background: transparent;
+}
+
+.strength{
+  margin: 10px 20px;
+	padding: 10px 15px;
+
+}
+.check{
+
+	transform: scale(1.5);
+	margin-left: 10px;
+}
+.show{
+	color: white;
+
+}
+
+.adder{
+	color: rgb(5, 245, 45);
+	background-color: rgba(142, 209, 154,0.5);
+	border: 1px solid rgb(0, 125, 23);
+	border-radius: 15px;
+}
+.less_digit{
+	color: rgb(255, 0, 32);
+	background-color: rgba(242, 170, 179, 0.5);
+	border: 1px solid rgb(255, 0, 32);
+	border-radius: 15px;
+}
+
+
+
+@media (max-width:700px){
+	.container{
+
+		width: 80%;
+		height: 30%;
+	}
+	.inputs{
+		display: flex;
+		flex-direction: column;
+	}
+	.pass{
+		width: 60vw;
+	}
+	.check{
+		margin-top: 1vw;
+	}
+	.container:hover::before{
+	transform: skewX(-10deg) translateX(600px);
+}
+}
